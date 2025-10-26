@@ -10,7 +10,6 @@ export default function WarrantiesPage() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <div className="bg-white border-b px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <ChevronLeft className="h-6 w-6 cursor-pointer" />
             <h1 className="text-2xl font-bold">Warranties</h1>
           </div>
           <Button variant="outline" size="sm">

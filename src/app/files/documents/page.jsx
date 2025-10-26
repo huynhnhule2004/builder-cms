@@ -87,7 +87,6 @@ export default function DocumentsPage() {
       <div className="flex-1 flex flex-col">
         <div className="bg-white border-b p-4">
           <div className="flex items-center gap-2 mb-2">
-            <ChevronLeft className="h-5 w-5 text-gray-600" />
             <div>
               <div className="text-sm text-gray-600">{selectedJob}</div>
               <h1 className="text-2xl font-bold">Documents</h1>
@@ -133,7 +132,7 @@ export default function DocumentsPage() {
                       <div className="flex items-center gap-2">
                         <input type="checkbox" />
                         <Folder className={`h-5 w-5 ${folder.pinned ? 'text-blue-500' : 'text-yellow-500'}`} />
-                        <span className={`text-sm ${folder.pinned ? 'text-purple-600 font-medium' : 'text-purple-600'}`}>
+                        <span className={`text-sm ${folder.pinned ? 'text-blue-600 font-medium' : 'text-blue-600'}`}>
                           {folder.name}
                         </span>
                       </div>

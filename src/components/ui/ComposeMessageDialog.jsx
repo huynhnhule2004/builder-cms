@@ -22,9 +22,6 @@ export default function ComposeMessageDialog({ open, onOpenChange }) {
               <div className="text-sm text-gray-500">C 005 - Uniq Nail Lounge & Spa</div>
               <DialogTitle className="text-2xl font-bold text-gray-900">Compose New Message</DialogTitle>
             </div>
-            <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
-              <X className="h-5 w-5" />
-            </Button>
           </div>
         </DialogHeader>
 
@@ -42,8 +39,8 @@ export default function ComposeMessageDialog({ open, onOpenChange }) {
               className="w-full"
               placeholder=""
             />
-            <button className="flex items-center gap-2 mt-2 text-purple-600 hover:text-purple-700 text-sm font-medium">
-              <Plus className="h-4 w-4 bg-purple-600 text-white rounded-full" />
+            <button className="flex items-center gap-2 mt-2 text-blue-600 hover:text-blue-700 text-sm font-medium">
+              <Plus className="h-4 w-4 bg-blue-600 text-white rounded-full" />
               Add email
             </button>
           </div>
@@ -57,8 +54,8 @@ export default function ComposeMessageDialog({ open, onOpenChange }) {
               className="w-full"
               placeholder=""
             />
-            <button className="flex items-center gap-2 mt-2 text-purple-600 hover:text-purple-700 text-sm font-medium">
-              <Plus className="h-4 w-4 bg-purple-600 text-white rounded-full" />
+            <button className="flex items-center gap-2 mt-2 text-blue-600 hover:text-blue-700 text-sm font-medium">
+              <Plus className="h-4 w-4 bg-blue-600 text-white rounded-full" />
               Add email
             </button>
           </div>
@@ -72,8 +69,8 @@ export default function ComposeMessageDialog({ open, onOpenChange }) {
               className="w-full"
               placeholder=""
             />
-            <button className="flex items-center gap-2 mt-2 text-purple-600 hover:text-purple-700 text-sm font-medium">
-              <Plus className="h-4 w-4 bg-purple-600 text-white rounded-full" />
+            <button className="flex items-center gap-2 mt-2 text-blue-600 hover:text-blue-700 text-sm font-medium">
+              <Plus className="h-4 w-4 bg-blue-600 text-white rounded-full" />
               Add email
             </button>
           </div>
@@ -152,7 +149,7 @@ export default function ComposeMessageDialog({ open, onOpenChange }) {
             <Button variant="outline" className="px-6">
               Save as Draft
             </Button>
-            <Button className="px-6 bg-purple-600 hover:bg-purple-700 text-white">
+            <Button className="px-6 bg-blue-600 hover:bg-blue-700 text-white">
               Send & Close
             </Button>
           </div>

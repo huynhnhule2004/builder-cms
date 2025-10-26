@@ -8,7 +8,6 @@ export default function TodosPage() {
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <div className="bg-white border-b px-6 py-4 flex items-center gap-4">
-          <ChevronLeft className="h-6 w-6 cursor-pointer" />
           <h1 className="text-2xl font-bold">To-Do's</h1>
         </div>
         <div className="flex-1 flex items-center justify-center">

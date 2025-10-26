@@ -34,20 +34,26 @@ export default function Topbar() {
               </button>
             </PopoverTrigger>
             <PopoverContent align="start" className="w-64 p-2 bg-white shadow-lg rounded-lg">
-              <Link href="/sales/opportunities" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
-                <Settings className="h-5 w-5" /> Lead Opportunities
+              <Link href="/sales/opportunities?tab=list" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenSales(false)}>
+                <List className="h-5 w-5" /> List View
               </Link>
-              <Link href="/sales/activities" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
-                <Activity className="h-5 w-5" /> Lead Activities
+              <Link href="/sales/opportunities?tab=activity" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenSales(false)}>
+                <Activity className="h-5 w-5" /> Activity View
               </Link>
-              <Link href="/sales/proposals" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/sales/opportunities?tab=calendar" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenSales(false)}>
+                <Calendar className="h-5 w-5" /> Activity Calendar
+              </Link>
+              <Link href="/sales/opportunities?tab=templates" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenSales(false)}>
+                <Settings className="h-5 w-5" /> Activity Templates
+              </Link>
+              <Link href="/sales/opportunities?tab=proposals" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenSales(false)}>
                 <FileText className="h-5 w-5" /> Lead Proposals
               </Link>
-              <Link href="/sales/calendar" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
-                <Calendar className="h-5 w-5" /> Lead Activity Calendar
+              <Link href="/sales/opportunities?tab=proposal-templates" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenSales(false)}>
+                <FileCheck className="h-5 w-5" /> Proposal Templates
               </Link>
-              <Link href="/sales/map" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
-                <MapPin className="h-5 w-5" /> Lead Map
+              <Link href="/sales/opportunities?tab=map" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenSales(false)}>
+                <MapPin className="h-5 w-5" /> Map
               </Link>
             </PopoverContent>
           </Popover>
@@ -59,19 +65,19 @@ export default function Topbar() {
               </button>
             </PopoverTrigger>
             <PopoverContent align="start" className="w-64 p-2 bg-white shadow-lg rounded-lg">
-              <Link href="/jobs/summary" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenJobs(false)}>
                 <Clipboard className="h-5 w-5" /> Summary
               </Link>
-              <Link href="/jobs/info" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/jobs/info" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenJobs(false)}>
                 <FileText className="h-5 w-5" /> Job Info
               </Link>
-              <Link href="/jobs/price-summary" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/jobs/price-summary" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenJobs(false)}>
                 <Tag className="h-5 w-5" /> Job Price Summary
               </Link>
-              <Link href="/jobs/list" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/jobs/list" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenJobs(false)}>
                 <List className="h-5 w-5" /> Jobs List
               </Link>
-              <Link href="/jobs/map" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/jobs/list?view=map" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenJobs(false)}>
                 <MapIcon className="h-5 w-5" /> Jobs Map
               </Link>
             </PopoverContent>
@@ -84,31 +90,31 @@ export default function Topbar() {
               </button>
             </PopoverTrigger>
             <PopoverContent align="start" className="w-64 p-2 bg-white shadow-lg rounded-lg">
-              <Link href="/project-management/schedule" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/project-management/schedule" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenProjectManagement(false)}>
                 <Calendar className="h-5 w-5" /> Schedule
               </Link>
-              <Link href="/project-management/daily-logs" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/project-management/daily-logs" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenProjectManagement(false)}>
                 <FileText className="h-5 w-5" /> Daily Logs
               </Link>
-              <Link href="/project-management/todos" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/project-management/todos" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenProjectManagement(false)}>
                 <CheckSquare className="h-5 w-5" /> To-Do's
               </Link>
-              <Link href="/project-management/change-orders" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/project-management/change-orders" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenProjectManagement(false)}>
                 <Edit className="h-5 w-5" /> Change Orders
               </Link>
-              <Link href="/project-management/selections" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/project-management/selections" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenProjectManagement(false)}>
                 <Tag className="h-5 w-5" /> Selections
               </Link>
-              <Link href="/project-management/warranties" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/project-management/warranties" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenProjectManagement(false)}>
                 <Shield className="h-5 w-5" /> Warranties
               </Link>
-              <Link href="/project-management/time-clock" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/project-management/time-clock" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenProjectManagement(false)}>
                 <Clock className="h-5 w-5" /> Time Clock
               </Link>
-              <Link href="/project-management/specifications" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/project-management/specifications" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenProjectManagement(false)}>
                 <FileCheck className="h-5 w-5" /> Specifications
               </Link>
-              <Link href="/project-management/client-updates" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/project-management/client-updates" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenProjectManagement(false)}>
                 <UserCheck className="h-5 w-5" /> Client Updates
               </Link>
             </PopoverContent>
@@ -121,13 +127,13 @@ export default function Topbar() {
               </button>
             </PopoverTrigger>
             <PopoverContent align="start" className="w-64 p-2 bg-white shadow-lg rounded-lg">
-              <Link href="/files/documents" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/files/documents" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFiles(false)}>
                 <FileText className="h-5 w-5" /> Documents
               </Link>
-              <Link href="/files/photos" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/files/photos" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFiles(false)}>
                 <Image className="h-5 w-5" /> Photos
               </Link>
-              <Link href="/files/videos" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/files/videos" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFiles(false)}>
                 <Video className="h-5 w-5" /> Videos
               </Link>
             </PopoverContent>
@@ -140,16 +146,16 @@ export default function Topbar() {
               </button>
             </PopoverTrigger>
             <PopoverContent align="start" className="w-64 p-2 bg-white shadow-lg rounded-lg">
-              <Link href="/messaging/comments" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/messaging/comments" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenMessaging(false)}>
                 <MessageCircle className="h-5 w-5" /> Comments
               </Link>
-              <Link href="/messaging/messages" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/messaging/messages" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenMessaging(false)}>
                 <FileText className="h-5 w-5" /> Messages
               </Link>
-              <Link href="/messaging/rfis" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/messaging/rfis" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenMessaging(false)}>
                 <HelpCircle className="h-5 w-5" /> RFIs
               </Link>
-              <Link href="/messaging/surveys" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/messaging/surveys" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenMessaging(false)}>
                 <Clipboard className="h-5 w-5" /> Surveys
               </Link>
             </PopoverContent>
@@ -162,31 +168,31 @@ export default function Topbar() {
               </button>
             </PopoverTrigger>
             <PopoverContent align="start" className="w-64 p-2 bg-white shadow-lg rounded-lg">
-              <Link href="/financial/bids" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/financial/bids" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFinancial(false)}>
                 <Clipboard className="h-5 w-5" /> Bids
               </Link>
-              <Link href="/financial/estimate" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/financial/estimate" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFinancial(false)}>
                 <FileSpreadsheet className="h-5 w-5" /> Estimate
               </Link>
-              <Link href="/financial/purchase-orders" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/financial/purchase-orders" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFinancial(false)}>
                 <Package className="h-5 w-5" /> Purchase Orders
               </Link>
-              <Link href="/financial/bills" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/financial/bills" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFinancial(false)}>
                 <Receipt className="h-5 w-5" /> Bills
               </Link>
-              <Link href="/financial/budget" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/financial/budget" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFinancial(false)}>
                 <Scale className="h-5 w-5" /> Budget
               </Link>
-              <Link href="/financial/job-costing-budget" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/financial/job-costing-budget" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFinancial(false)}>
                 <DollarSign className="h-5 w-5" /> Job Costing Budget
               </Link>
-              <Link href="/financial/cashback-discounts" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/financial/cashback-discounts" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFinancial(false)}>
                 <Wallet className="h-5 w-5" /> Cashback & Discounts
               </Link>
-              <Link href="/financial/cost-inbox" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/financial/cost-inbox" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFinancial(false)}>
                 <Inbox className="h-5 w-5" /> Cost Inbox
               </Link>
-              <Link href="/financial/invoices" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800">
+              <Link href="/financial/invoices" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 transition text-gray-800" onClick={() => setOpenFinancial(false)}>
                 <FileText className="h-5 w-5" /> Invoices
               </Link>
             </PopoverContent>

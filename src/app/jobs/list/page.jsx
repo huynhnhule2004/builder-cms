@@ -1,12 +1,27 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { List as ListIcon, Map as MapIcon, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import JobsTable from "@/components/jobs/JobsTable";
 import JobsMapView from "@/components/jobs/JobsMapView";
 
 export default function JobsListPage() {
-  const [view, setView] = useState("list");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const [view, setView] = useState(searchParams.get("view") || "list");
+
+  useEffect(() => {
+    const viewParam = searchParams.get("view");
+    if (viewParam && viewParam !== view) {
+      setView(viewParam);
+    }
+  }, [searchParams]);
+
+  const handleViewChange = (newView) => {
+    setView(newView);
+    router.push(`/jobs/list?view=${newView}`);
+  };
 
   return (
     <div className="flex flex-col h-screen bg-white">
@@ -17,14 +32,14 @@ export default function JobsListPage() {
           <div className="flex gap-2">
             <Button
               variant={view === "list" ? "default" : "outline"}
-              onClick={() => setView("list")}
+              onClick={() => handleViewChange("list")}
               className="rounded-lg"
             >
               List
             </Button>
             <Button
               variant={view === "map" ? "default" : "outline"}
-              onClick={() => setView("map")}
+              onClick={() => handleViewChange("map")}
               className="rounded-lg"
             >
               Map
