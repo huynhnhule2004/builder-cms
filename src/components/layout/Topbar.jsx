@@ -24,7 +24,9 @@ export default function Topbar() {
   return (
     <header className="bg-[#0B5393] text-white/95 shadow h-16">
       <div className="mx-auto flex h-full items-center gap-6 px-6 max-w-screen-2xl">
-        <div className="grid h-9 w-9 place-items-center rounded-lg bg-white/20 font-bold text-lg tracking-wide shadow">b</div>
+        <Link href="/">
+          <div className="grid h-9 w-9 place-items-center rounded-lg bg-white/20 font-bold text-lg tracking-wide shadow">b</div>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
           <Popover open={openSales} onOpenChange={setOpenSales}>
@@ -57,7 +59,7 @@ export default function Topbar() {
               </Link>
             </PopoverContent>
           </Popover>
-          
+
           <Popover open={openJobs} onOpenChange={setOpenJobs}>
             <PopoverTrigger asChild>
               <button className="transition hover:text-white hover:underline underline-offset-4">
@@ -82,7 +84,7 @@ export default function Topbar() {
               </Link>
             </PopoverContent>
           </Popover>
-          
+
           <Popover open={openProjectManagement} onOpenChange={setOpenProjectManagement}>
             <PopoverTrigger asChild>
               <button className="transition hover:text-white hover:underline underline-offset-4">
@@ -119,7 +121,7 @@ export default function Topbar() {
               </Link>
             </PopoverContent>
           </Popover>
-          
+
           <Popover open={openFiles} onOpenChange={setOpenFiles}>
             <PopoverTrigger asChild>
               <button className="transition hover:text-white hover:underline underline-offset-4">
@@ -138,7 +140,7 @@ export default function Topbar() {
               </Link>
             </PopoverContent>
           </Popover>
-          
+
           <Popover open={openMessaging} onOpenChange={setOpenMessaging}>
             <PopoverTrigger asChild>
               <button className="transition hover:text-white hover:underline underline-offset-4">
@@ -160,7 +162,7 @@ export default function Topbar() {
               </Link>
             </PopoverContent>
           </Popover>
-          
+
           <Popover open={openFinancial} onOpenChange={setOpenFinancial}>
             <PopoverTrigger asChild>
               <button className="transition hover:text-white hover:underline underline-offset-4">
@@ -216,7 +218,7 @@ export default function Topbar() {
               </Button>
             </PopoverTrigger>
             <PopoverContent align="end" className="w-56 p-2 bg-white shadow-lg rounded-lg">
-              <button 
+              <button
                 onClick={() => {
                   setOpenComposeMessage(true);
                   setOpenPlusMenu(false);
