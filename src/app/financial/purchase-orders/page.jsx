@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Filter, MoreHorizontal, ChevronDown } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const purchaseOrders = [
   { job: "C 005 - Uniq Nail Lounge...", po: "020", title: "C 005-Framing Materials", poStatus: "Draft", workStatus: "Not Complete", performedBy: "Doug Ashy Building Mate...", createdDate: "Oct 21, 2025" },
@@ -13,7 +14,7 @@ const purchaseOrders = [
   { job: "C 005 - Uniq Nail Lounge...", po: "0017", title: "Tankless Water Heaters", poStatus: "Draft", workStatus: "Not Complete", performedBy: "Southern Pipe & Supply C...", createdDate: "Jul 21, 2025" },
 ];
 
-export default function PurchaseOrdersPage() {
+function PurchaseOrdersContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const currentTab = searchParams.get("tab") || "purchase-orders";
@@ -167,5 +168,13 @@ export default function PurchaseOrdersPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function PurchaseOrdersPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PurchaseOrdersContent />
+    </Suspense>
   );
 }

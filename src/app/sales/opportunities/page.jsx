@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import AddLeadOpportunityDialog from "./components/AddLeadOpportunityDialog";
 import MapView from "./components/MapView";
@@ -17,7 +17,7 @@ const tabs = [
   { id: "map", label: "Map", href: "/sales/opportunities/map" },
 ];
 
-export default function LeadOpportunitiesPage() {
+function LeadOpportunitiesContent() {
   const searchParams = useSearchParams();
   const tabParam = searchParams.get('tab');
   const [activeTab, setActiveTab] = useState(tabParam || "list");
@@ -97,5 +97,17 @@ export default function LeadOpportunitiesPage() {
         onClose={() => setShowDialog(false)} 
       />
     </div>
+  );
+}
+
+export default function LeadOpportunitiesPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center h-screen">
+        <div className="text-gray-500">Loading...</div>
+      </div>
+    }>
+      <LeadOpportunitiesContent />
+    </Suspense>
   );
 }

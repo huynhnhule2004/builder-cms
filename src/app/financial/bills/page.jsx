@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import Sidebar from "@/components/layout/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,7 +12,7 @@ const bills = [
   { job: "C 005 - Uniq Nail Lounge...", bill: "B-003", title: "Plumbing Installation", billStatus: "Pending", workStatus: "Complete", vendor: "Amour Construction LLC", dueDate: "Nov 20, 2025" },
 ];
 
-export default function BillsPage() {
+function BillsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const currentTab = searchParams.get("tab") || "bills";
@@ -167,5 +168,13 @@ export default function BillsPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function BillsPage() {
+  return (
+    <Suspense fallback={<div className="flex h-[calc(100vh-64px)] items-center justify-center">Loading...</div>}>
+      <BillsContent />
+    </Suspense>
   );
 }

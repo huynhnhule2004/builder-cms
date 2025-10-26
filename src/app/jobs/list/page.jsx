@@ -1,12 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { List as ListIcon, Map as MapIcon, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import JobsTable from "@/components/jobs/JobsTable";
 import JobsMapView from "@/components/jobs/JobsMapView";
 
-export default function JobsListPage() {
+function JobsListContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [view, setView] = useState(searchParams.get("view") || "list");
@@ -76,5 +76,17 @@ export default function JobsListPage() {
         1-9 of 9 items
       </div>
     </div>
+  );
+}
+
+export default function JobsListPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center h-screen">
+        <div className="text-gray-500">Loading...</div>
+      </div>
+    }>
+      <JobsListContent />
+    </Suspense>
   );
 }
